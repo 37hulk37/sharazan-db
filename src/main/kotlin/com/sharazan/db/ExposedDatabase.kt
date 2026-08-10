@@ -1,16 +1,15 @@
 package com.sharazan.db
 
-import com.sharazan.core.Startable
+import com.sharazan.core.Lifecycle
 import com.sharazan.db.configuration.Configuration
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
 import org.jetbrains.exposed.v1.jdbc.Database
 import org.slf4j.LoggerFactory
-import java.io.Closeable
 
 class ExposedDatabase(
     private val configuration: Configuration,
-): Startable, Closeable {
+): Lifecycle {
 
     private val logger = LoggerFactory.getLogger(ExposedDatabase::class.java)
 
