@@ -1,6 +1,7 @@
 package com.sharazan.db.configuration
 
 import com.sharazan.core.AppBuilder
+import com.sharazan.core.Lifecycle
 import com.sharazan.core.properties.ConfigurationSource
 import com.sharazan.db.ExposedDatabase
 import org.koin.dsl.bind
@@ -11,7 +12,7 @@ fun AppBuilder.database(block: DbProperties.() -> Unit) = apply {
 
     val dbModule = module {
         single { props } bind DbProperties::class
-        single { ExposedDatabase(props) }
+        single { ExposedDatabase(props) } bind Lifecycle::class
     }
 
     addModule(dbModule)
@@ -27,7 +28,7 @@ fun AppBuilder.database() = apply {
 
             props
         }
-        single { ExposedDatabase(get()) }
+        single { ExposedDatabase(get()) } bind Lifecycle::class
     }
 
     addModule(dbModule)
