@@ -2,7 +2,8 @@ package com.sharazan.db.configuration
 
 import com.sharazan.core.AppBuilder
 import com.sharazan.core.Lifecycle
-import com.sharazan.core.properties.ConfigurationSource
+import com.sharazan.core.source.ConfigurationSource
+import com.sharazan.core.source.get
 import com.sharazan.db.ExposedDatabase
 import org.koin.core.scope.Scope
 import org.koin.dsl.bind

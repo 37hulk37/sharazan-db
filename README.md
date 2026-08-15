@@ -1,5 +1,7 @@
 # sharazan-db
 
+[![](https://jitpack.io/v/37hulk37/sharazan-db.svg)](https://jitpack.io/#37hulk37/sharazan-db)
+
 **Sharazan** — модульный бэкенд-фреймворк на Kotlin, вдохновлённый архитектурой Ktor (declare-then-start композиция через Koin, без Spring-магии).
 
 **db** — доступ к Postgres через Exposed + HikariCP: `ExposedDatabase` (управление пулом соединений и жизненным циклом) и `query { }` — единая точка входа для выполнения запросов вне `Dispatchers.Default`.
